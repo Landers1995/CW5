@@ -1,0 +1,1 @@
+from course_work_5.db.managers.pg_db_manager import PostgresDBManager
