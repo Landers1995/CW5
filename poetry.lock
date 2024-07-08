@@ -412,16 +412,6 @@ files = [
 ]
 
 [[package]]
-name = "sql"
-version = "2022.4.0"
-description = "DB API 2.0 for Humans"
-optional = false
-python-versions = "*"
-files = [
-    {file = "sql-2022.4.0.tar.gz", hash = "sha256:f8cae71ac27e8bf763c4313497ba68f7e6ec577a1eb997738aaad3b3d5f7a600"},
-]
-
-[[package]]
 name = "stack-data"
 version = "0.6.3"
 description = "Extract data from python stack frames and tracebacks for informative displays"
@@ -506,4 +496,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "20b0dd008aae2a57b7c9a91124b446d93e3a727db06e84877473e3e6856f1a40"
+content-hash = "40855212db04c927a437d867521c526f0795c84b93418102c542657fbc19b56a"
