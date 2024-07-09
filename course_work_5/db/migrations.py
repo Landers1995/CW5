@@ -21,7 +21,7 @@ def create_database():
 
 
 def apply_migrations():
-    db_manager = PostgresDBManager
+    db_manager = PostgresDBManager()
     db_manager.connect()
 
     try:

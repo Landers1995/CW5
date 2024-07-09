@@ -25,3 +25,12 @@ class DBManager(ABC):
     def commit(self) -> None:
         self.connection.commit()
 
+    # def __init__(self, db_name: str = settings.DB_NAME):
+    #     print(db_name.encode('utf-8'))
+    #     self.db_name = 'postgres'
+    #     self.user = 'postgres'
+    #     self.password = '1234'
+    #     self.host = 'localhost'
+    #     self.port = '5432'
+    #     self.connection: extensions.connection | None = None
+

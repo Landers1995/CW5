@@ -31,6 +31,7 @@ class VacancyType(Enum):
 class VacancyInfo:
     id: int
     name: str
+    url: str
     salary_from: int | None
     salary_to: int | None
     employer_id: int

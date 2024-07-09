@@ -45,7 +45,8 @@ class HeadHunterAPIClient(APIClient):
         return [
             VacancyInfo(
                 id=int(vac['id']),
-                name=vac['alternate_url'],
+                url=vac['alternate_url'],
+                name=vac['name'],
                 salary_from=vac['salary'].get('from'),
                 salary_to=vac['salary'].get('to'),
                 employer_id=employer_id,
