@@ -2,7 +2,11 @@ from course_work_5.api_clients import HeadHunterAPIClient
 from prettytable import PrettyTable
 
 hh_client = HeadHunterAPIClient()
+
+
 def run():
+    """Поиск работодателей по ключевым словам"""
+
     print('ведите текст для поиска работодателя')
     search = input()
 

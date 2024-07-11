@@ -3,6 +3,8 @@ from prettytable import PrettyTable
 
 
 def print_employers():
+    """Вывод информации о работодателях и количества предлагаемых ими вакансий"""
+
     db_manager = PostgresDBManager()
     try:
         res = db_manager.get_companies_and_vacancies_count()
@@ -15,6 +17,8 @@ def print_employers():
 
 
 def print_get_all_vacancies():
+    """Вывод информации о всех вакансиях"""
+
     db_manager = PostgresDBManager()
     try:
         res = db_manager.get_all_vacancies()
@@ -27,6 +31,8 @@ def print_get_all_vacancies():
 
 
 def print_average_salary():
+    """Вывод информации о средней зарплате среди всех вакансий"""
+
     db_manager = PostgresDBManager()
     try:
         salary = db_manager.get_avg_salary()
@@ -36,6 +42,8 @@ def print_average_salary():
 
 
 def print_get_vacancies_with_higher_salary():
+    """Вывод информации о зарплатах, превышающей среднюю зарплату"""
+
     db_manager = PostgresDBManager()
     try:
         res = db_manager.get_vacancies_with_higher_salary()
@@ -48,10 +56,11 @@ def print_get_vacancies_with_higher_salary():
 
 
 def print_get_vacancies_with_keyword():
-    text = input('Введите ключевое слово:   ')
+    """Вывод информации о вакансиях по ключевому слову"""
+
     db_manager = PostgresDBManager()
     try:
-        res = db_manager.get_vacancies_with_keyword(text)
+        res = db_manager.get_vacancies_with_keyword()
     finally:
         db_manager.disconnect()
     table = PrettyTable(field_names=['Название компаний', 'Название вакансий', 'Зарплата от', 'Зарплата до', 'Ссылка на вакансию'])
@@ -61,6 +70,8 @@ def print_get_vacancies_with_keyword():
 
 
 def run_interation():
+    """Интерфейс для управления программой"""
+
     user_actions = {
         '1': print_employers,
         '2': print_average_salary,

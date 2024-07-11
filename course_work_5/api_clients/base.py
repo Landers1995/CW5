@@ -4,6 +4,7 @@ import json
 
 
 class APIClient(ABC):
+    """Базовый класс для класса HeadHunterAPIClient"""
 
     @property
     @abstractmethod

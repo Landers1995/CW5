@@ -3,11 +3,14 @@ from .entities import ShortEmployerInfo, FullEmployerInfo, VacancyInfo, VacancyT
 
 
 class HeadHunterAPIClient(APIClient):
+    """Класс выгрузки данных с сайта hh.ru"""
 
     def __init__(self):
         self.__base_url = 'https://api.hh.ru'
 
     def search_employers(self, search: str, *, only_with_vacancies: bool = True) -> list[ShortEmployerInfo]:
+        """Поиск работодателей"""
+
         params = {
             'text': search,
             'only_with_vacancies': only_with_vacancies
@@ -25,6 +28,8 @@ class HeadHunterAPIClient(APIClient):
         ]
 
     def get_employer_info(self, employer_id: int) -> FullEmployerInfo:
+        """Получение информации о работодателях"""
+
         employer_info = self._get(f'/employers/{employer_id}')
         return FullEmployerInfo(
             id=employer_id,
@@ -36,6 +41,8 @@ class HeadHunterAPIClient(APIClient):
         )
 
     def get_employer_vacancies(self, employer_id: int) -> list[VacancyInfo]:
+        """Получение вакансий от работодателей"""
+
         params = {
             'employer_id': employer_id,
             'only_with_salary': True,

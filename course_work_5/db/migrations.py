@@ -5,6 +5,8 @@ from course_work_5.db.managers import PostgresDBManager
 
 
 def create_database():
+    """Создание базы данных"""
+
     db_manager = PostgresDBManager(db_name='postgres')
     db_manager.connect()
     db_manager.connection.autocommit = True
@@ -21,6 +23,8 @@ def create_database():
 
 
 def apply_migrations():
+    """Выполнение миграций текста SQL запросов из папки migrations"""
+
     db_manager = PostgresDBManager()
     db_manager.connect()
 
@@ -35,6 +39,7 @@ def apply_migrations():
 
 
 def _read_migrations(file_path: Path) -> str:
+    """Чтение SQL запросов"""
     with file_path.open(encoding='utf-8') as f:
         return f.read()
 

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
+"""Data классы"""
 
 @dataclass
 class ShortEmployerInfo:
